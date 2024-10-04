@@ -19,7 +19,9 @@ app.use('/login', route_login);
 app.get('/', (req, res) => {
     res.send('weather api');
 });
-
+app.use((req, res) => {
+    res.status(404).json({ error: "Route not found, enter a valid route" });
+});
 
 
 // Iniciar el servidor
